@@ -10,7 +10,9 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- Import other AMP Extensions here -->
   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-  <script async custom-element="amp-video-docking" src="https://cdn.ampproject.org/v0/amp-video-docking-0.1.js"></script>
+  <script async custom-element="amp-video-docking"
+    src="https://cdn.ampproject.org/v0/amp-video-docking-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
   <style amp-custom>
     :root {
       --primary-color: #00d1c3;
@@ -322,42 +324,45 @@
         <h2 class="recipe__card__title">Steps to Make It</h2>
       </header>
       <div class="recipe__card__content">
-        <figure class="recipe__card__step" id="step1">
-          <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step1.jpg">
+        <!-- Carousel of images exameple -->
+        <amp-carousel width="640" height="480" type="slides" layout="responsive" autoplay delay="2000">
+          <figure class="recipe__card__step" id="step1">
+            <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step1.jpg">
 
-          </amp-img>
-          <figcaption>1. Gather the ingredients.</figcaption>
-        </figure>
-        <figure class="recipe__card__step" id="step2">
-          <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step2.jpg">
+            </amp-img>
+            <figcaption>1. Gather the ingredients.</figcaption>
+          </figure>
+          <figure class="recipe__card__step" id="step2">
+            <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step2.jpg">
 
-          </amp-img>
-          <figcaption>2. Cut half of a lime into small wedges.</figcaption>
-        </figure>
-        <figure class="recipe__card__step" id="step3">
-          <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step3.jpg">
+            </amp-img>
+            <figcaption>2. Cut half of a lime into small wedges.</figcaption>
+          </figure>
+          <figure class="recipe__card__step" id="step3">
+            <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step3.jpg">
 
-          </amp-img>
-          <figcaption>
-            3. Place the lime and sugar into an old-fashioned glass and muddle
-            well.
-          </figcaption>
-        </figure>
-        <figure class="recipe__card__step" id="step4">
-          <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step4.jpg">
+            </amp-img>
+            <figcaption>
+              3. Place the lime and sugar into an old-fashioned glass and muddle
+              well.
+            </figcaption>
+          </figure>
+          <figure class="recipe__card__step" id="step4">
+            <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step4.jpg">
 
-          </amp-img>
-          <figcaption>4. Add a few ice cubes.</figcaption>
-        </figure>
-        <figure class="recipe__card__step" id="step5">
-          <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step5.jpg">
+            </amp-img>
+            <figcaption>4. Add a few ice cubes.</figcaption>
+          </figure>
+          <figure class="recipe__card__step" id="step5">
+            <amp-img width="640" height="480" layout="responsive" src="./assets/images/caipirinha_step5.jpg">
 
-          </amp-img>
-          <figcaption>5. Top the drink with cachaça.</figcaption>
-        </figure>
-        <figure>
-          <figcaption>6. Stir well and enjoy!</figcaption>
-        </figure>
+            </amp-img>
+            <figcaption>5. Top the drink with cachaça.</figcaption>
+          </figure>
+          <figure>
+            <figcaption>6. Stir well and enjoy!</figcaption>
+          </figure>
+        </amp-carousel>
       </div>
     </section>
     <footer class="recipe__footer">
