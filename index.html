@@ -9,10 +9,15 @@
   <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- Import other AMP Extensions here -->
+  <!-- Required script for amp-video -->
   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <!-- Required script for video docking, Use dock attribute on the video line-->
   <script async custom-element="amp-video-docking"
     src="https://cdn.ampproject.org/v0/amp-video-docking-0.1.js"></script>
+  <!-- Required script for amp-carousel -->
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+  <!-- Required script for amp-sociak-share -->
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
   <style amp-custom>
     :root {
       --primary-color: #00d1c3;
@@ -365,6 +370,14 @@
       </div>
     </section>
     <footer class="recipe__footer">
+      <!-- Social share buttons example -->
+      <div class="social-bar">
+        <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
+        <amp-social-share type="email" width="44" height="44"></amp-social-share>
+        <amp-social-share type="linkedin" width="44" height="44"></amp-social-share>
+        <amp-social-share type="facebook" width="44" height="44"></amp-social-share>
+        <amp-social-share type="whatsapp" width="44" height="44"></amp-social-share>
+      </div>
       <h3 class="recipe__subtitle">By Fellyph Cintra</h3>
       Please do not share with anyone under the legal purchase age for
       alcohol.Drink Responsibly.
