@@ -18,6 +18,8 @@
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
   <!-- Required script for amp-sociak-share -->
   <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <!-- Required script for amp-sidebar -->
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <style amp-custom>
     :root {
       --primary-color: #00d1c3;
@@ -81,10 +83,6 @@
     }
 
     /* =========== navigation ========== */
-
-    .recipe__navigation {
-      position: fixed;
-    }
 
     .recipe__navigation__menu,
     .recipe__navigation__submenu {
@@ -240,40 +238,49 @@
     <header class="recipe__header">
       <h1 class="recipe__title">How to prepare The Best Caipirinha</h1>
     </header>
-    <nav class="recipe__navigation">
-      <ul class="recipe__navigation__menu">
-        <li class="recipe__navigation__item"><a href="#about">About</a></li>
-        <li class="recipe__navigation__item">
-          <a href="#ingredients">Ingredients</a>
-        </li>
-        <li class="recipe__navigation__item">
-          <a href="#steps">Steps to Make It</a>
-          <ul class="recipe__navigation__submenu">
-            <li class="recipe__navigation__item">
-              <a href="#step1">Step 1</a>
-            </li>
-            <li class="recipe__navigation__item">
-              <a href="#step2">Step 2</a>
-            </li>
-            <li class="recipe__navigation__item">
-              <a href="#step3">Step 3</a>
-            </li>
-            <li class="recipe__navigation__item">
-              <a href="#step4">Step 4</a>
-            </li>
-            <li class="recipe__navigation__item">
-              <a href="#step5">Step 5</a>
-            </li>
-            <li class="recipe__navigation__item">
-              <a href="#step6">Step 6</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <!-- Turn this into a sidebar that can be opened and closed -->
+    <amp-sidebar id="menu" layout="nodisplay">
+      <nav class="recipe__navigation">
+        <ul class="recipe__navigation__menu">
+          <li class="recipe__navigation__item"><a href="#about">About</a></li>
+          <li class="recipe__navigation__item">
+            <a href="#ingredients">Ingredients</a>
+          </li>
+          <li class="recipe__navigation__item">
+            <a href="#steps">Steps to Make It</a>
+            <ul class="recipe__navigation__submenu">
+              <li class="recipe__navigation__item">
+                <a href="#step1">Step 1</a>
+              </li>
+              <li class="recipe__navigation__item">
+                <a href="#step2">Step 2</a>
+              </li>
+              <li class="recipe__navigation__item">
+                <a href="#step3">Step 3</a>
+              </li>
+              <li class="recipe__navigation__item">
+                <a href="#step4">Step 4</a>
+              </li>
+              <li class="recipe__navigation__item">
+                <a href="#step5">Step 5</a>
+              </li>
+              <li class="recipe__navigation__item">
+                <a href="#step6">Step 6</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </amp-sidebar>
     <section class="recipe__about recipe__card" id="about">
       <header class="recipe__card__header">
         <h2 class="recipe__card__title">About</h2>
+        <div>
+          <!-- Create a button toggle to close and open the sidebar using the "menu" as the id of what will be closed -->
+          <button on="tap:menu.toggle">Menu</button>
+          <!-- Create another button to when clicked make it scroll to the element that has this id -->
+          <button on="tap:ingredientes.scrollTo">Ingredientes</button>
+        </div>
       </header>
       <section class="recipe__thumb">
         <amp-youtube data-videoid="T6OSr4mAcKA" width="640" height="480" layout="responsive" dock>
@@ -307,7 +314,8 @@
     </section>
     <section class="recipe__ingredients recipe__card" id="ingredients">
       <header class="recipe__card__header">
-        <h2 class="recipe__card__title">Ingredients</h2>
+        <!-- Add an id to the place we want the previous button to scroll to -->
+        <h2 class="recipe__card__title" id="ingredientes">Ingredients</h2>
       </header>
       <section class="recipe__thumb">
         <!-- Add images example -->
@@ -370,7 +378,12 @@
       </div>
     </section>
     <footer class="recipe__footer">
+      <h3 class="recipe__subtitle">By Fellyph Cintra</h3>
+      Please do not share with anyone under the legal purchase age for
+      alcohol.Drink Responsibly.
       <!-- Social share buttons example -->
+      <br>
+      <br>
       <div class="social-bar">
         <amp-social-share type="twitter" width="44" height="44"></amp-social-share>
         <amp-social-share type="email" width="44" height="44"></amp-social-share>
@@ -378,9 +391,6 @@
         <amp-social-share type="facebook" width="44" height="44"></amp-social-share>
         <amp-social-share type="whatsapp" width="44" height="44"></amp-social-share>
       </div>
-      <h3 class="recipe__subtitle">By Fellyph Cintra</h3>
-      Please do not share with anyone under the legal purchase age for
-      alcohol.Drink Responsibly.
     </footer>
   </main>
 </body>
